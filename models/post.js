@@ -12,8 +12,11 @@ Post.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
+      validate: {
+        max: 75,
+      },
     },
     text: {
         type: DataTypes.TEXT,
