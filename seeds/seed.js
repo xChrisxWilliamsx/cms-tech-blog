@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 const userSeed = require('./userSeed.json');
-const postSeed = require('./userSeed.json');
-const commentSeed = require('./userSeed.json');
+const postSeed = require('./postSeed.json');
+const commentSeed = require('./commentSeed.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,6 +18,8 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+  console.log('\n');
+  console.log("Seed Successful! ♥");
   process.exit(0);
 };
 seedDatabase();
