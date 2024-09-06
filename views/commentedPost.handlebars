@@ -1,0 +1,13 @@
+<div class="card"></div>
+    <div class="card-header">
+        <h5>{{post.title}}</h5>
+        <p>Posted by {{user.name}}</p>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{post.text}}</p>
+    </div>
+</div>
+
+{{#each comment as |comment|}}
+{{> commentedOn}}
+{{/each}}
